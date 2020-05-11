@@ -1,22 +1,10 @@
 .hero {
-    font-family: 'Bungee Inline', cursive;
+    font-family: 'Bungee Inline';
 }
 
-.brand-title {
-    font-size: 70px;
-
-}
-#recommend {
-    border: 20px;
-
-}
-
-#view {
-    border: 20px;
-
-}
-
-#search {
-    border: 20px;
-
+@media screen and (max-width:320px) {
+    #nav {
+        align-content: center;
+        width: fit-content;
+    }
 }
