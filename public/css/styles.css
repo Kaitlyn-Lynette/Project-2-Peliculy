@@ -2,6 +2,10 @@
     font-family: 'Bungee Inline', cursive;
 }
 
+.brand-title {
+    font-size: 70px;
+
+}
 #recommend {
     border: 20px;
 
