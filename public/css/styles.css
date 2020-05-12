@@ -2,21 +2,14 @@
     font-family: 'Bungee Inline', cursive;
 }
 
-.brand-title {
-    font-size: 70px;
+/* Width at 320px and below */
+@media screen and (max-width:320px) {
+    #nav {
+        align-content: center;
+        width: fit-content;
+    }
+    .jumbotron{
+        width:100%
 
-}
-#recommend {
-    border: 20px;
-
-}
-
-#view {
-    border: 20px;
-
-}
-
-#search {
-    border: 20px;
-
+    }
 }
