@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const sequelize = require('./connection.js');
 
 // create model
-const Movie = sequelize.define("movie", {
+const Movie = sequelize.define('movie', {
   //movie will turn into movies when searching db
   movieTitle: Sequelize.STRING,
   recommendation: Sequelize.STRING,
