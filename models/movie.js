@@ -14,6 +14,12 @@ module.exports = function(sequelize, DataTypes) {
   return Movie;
 };
 
+
+
+
+
+
+
 // // create model
 // const Movie = sequelize.define('movie', {
 //   //movie will turn into movies when searching db

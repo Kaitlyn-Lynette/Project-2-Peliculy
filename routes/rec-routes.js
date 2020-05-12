@@ -8,8 +8,8 @@ module.exports = function(app) {
 
   // POST route for saving a new recommendation
   app.post('/api/recommendations', function(req, res) {
-    db.Recommendations.create(req.body).then(function(dbPost) {
-      res.json(dbPost);
+    db.Recommendations.create(req.body).then(function(dbRecommendation) {
+      res.json(dbRecommendation);
     });
   });
 };
