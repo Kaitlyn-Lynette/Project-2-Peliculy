@@ -1,10 +1,15 @@
 .hero {
-    font-family: 'Bungee Inline';
+    font-family: 'Bungee Inline', cursive;
 }
 
+/* Width at 320px and below */
 @media screen and (max-width:320px) {
     #nav {
         align-content: center;
         width: fit-content;
+    }
+    .jumbotron{
+        width:100%
+
     }
 }

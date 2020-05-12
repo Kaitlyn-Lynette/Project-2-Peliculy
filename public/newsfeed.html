@@ -18,16 +18,33 @@
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://code.jquery.com/jquery.js"></script>
 
-    <title>Recommendation Page</title>
+    <title>Newsfeed Page</title>
 </head>
 <body>
-
-    <div class="container hero">            
+      <div class="container hero">            
         <div class="jumbotron">
             <h1 class="brand-title display-4">PELICUL(Y)</h1>
             <p class="lead">Your movie curator</p>
         </div>
-    </div>
+     </div>
 
-</body>
+      <div class="container blog">
+        <div class="row">
+          <div class="col-md-2 col-sm-2">
+            <a class="btn btn-default" href="/cms">New Post</a>
+          </div>
+          <div class="col-md-2 col-sm-2">
+            <a class="btn btn-default" href="/authors">Manage Authors</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 blog-container">
+          </div>
+        </div>
+      </div>
+    <!-- Custom Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+    <script src="js/blog.js" type="text/javascript"></script>
+  
+  </body>
 </html>
