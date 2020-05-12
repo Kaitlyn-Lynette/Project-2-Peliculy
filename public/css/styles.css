@@ -1,5 +1,5 @@
-.hero {
-    font-family: 'Bungee Inline', cursive;
+.jumbotron {
+    font-family: 'Fredericka the Great', cursive;
 }
 
 /* Width at 320px and below */
@@ -13,3 +13,10 @@
 
     }
 }
+
+body{
+    background-image: url(https://bit.ly/2zw5XjO); 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+   }
