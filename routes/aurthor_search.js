@@ -7,7 +7,7 @@ $("#search-btn").on("click", function(event) {
 
   // Make an AJAX get request to our api, including the user's book in the url
   $.get("/api/" + movieSearched, function(data) {
-    db.Todo.findAll({
+    db.movie.findAll({
             where: {
                 movieTitle: movieSearched
             }
