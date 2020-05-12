@@ -1,9 +1,7 @@
 
 // // Dependencies
 // // =============================================================
-const Entry = require("./model_entry");
-//This is the 
-
+const Entry = require("./model_entry")
 // // Routes
 // // =============================================================
 module.exports = function(app) {
@@ -22,7 +20,5 @@ module.exports = function(app) {
     console.log(result)
     res.json(result)
     res.end();}
-    
-
   );
 })}

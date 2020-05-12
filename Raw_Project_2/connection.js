@@ -8,7 +8,7 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize(
   "movies_DB",
   "root",
-  "",
+  "Physics212!",
   {
     host: "localhost",
     port: 3306,
