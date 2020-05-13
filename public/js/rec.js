@@ -5,44 +5,58 @@ $(document).ready(function() {
   //Getting jQuery references from the recommend.html
   var bodyInput = $("#body");
   var titleInput = $("#title");
-  var recForm = $("#rec-form");
+  var recButton = $("#rec-button");
   var yourName = $("#name");
   var yourRating = $("#id");
 
-$(recForm).on('submit', handleFormSubmit);
+$("#rec-button").click(function(){
 
   // var url = window.location.search;
   // var recommendationId;
   // var authorId;
 
 
-submitPost();
+// submitPost();
 
 // A function for handling what happens when the form to create a new post is submitted
-function handleFormSubmit(event) {
+// function handleFormSubmit(event) {
   event.preventDefault();
   // Constructing a newPost object to hand to the database
   var newPost = {
-    movieTitle: movieTitleInput
+    movieTitle: titleInput
       .val()
       .trim(),
-    recommendation: recInput
+    recommendation: bodyInput
       .val()
       .trim(),
-    name: nameInput
+    name: yourName
       .val()
       .trim(),
-    rating: ratingInput
-      .val(),
-  };
-
-  function submitPost(post) {
-    $.post("/api/recommendations", post, function() {
-      window.location.href = "/";
-    });
-  };
-
-};
+    }
+    // rating: ratingInput
+    //   .val(),
+    //need to asssign values to the number choices
+    console.log("new post", newPost);
+    $.post('/api/new', newPost)
+// On success, run the following code
+  .then(function(data) {
+    // Log the data we found
+    console.log(data);
+    
+  });
+    // $.post("/api/recommendations", newPost, function() {
+    //   window.location.href = "/";
+    // });
+  }
+)
+}
+)
+// $.post('/api/new', newPost)
+// // On success, run the following code
+//   .then(function(data) {
+//     // Log the data we found
+//     console.log(data);
+//   });
 
   // $('#submit').on('click', function(event) {
   //   console.log('Hola submit button');
@@ -57,12 +71,7 @@ function handleFormSubmit(event) {
   //   };
   //   console.log('newEntry', newEntry);
   //   // Send an AJAX POST-request with jQuery
-  //   $.post('/api/new', newEntry)
-  //   // On success, run the following code
-  //     .then(function(data) {
-  //       // Log the data we found
-  //       console.log(data);
-  //     });
+
 
   //   // Empty each input box by replacing the value with an empty string
   //   // $("#title").val("");

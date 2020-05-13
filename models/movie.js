@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
 
-  var Movie = sequelize.define('movie', {
+  var Movie = sequelize.define('Movie', {
     movieTitle: DataTypes.STRING,
     recommendation: DataTypes.STRING,
     userName: DataTypes.STRING,
@@ -13,12 +13,6 @@ module.exports = function(sequelize, DataTypes) {
 
   return Movie;
 };
-
-
-
-
-
-
 
 // // create model
 // const Movie = sequelize.define('movie', {
