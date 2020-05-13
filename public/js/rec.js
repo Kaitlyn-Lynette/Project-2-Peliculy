@@ -15,26 +15,24 @@ $(recForm).on('submit', handleFormSubmit);
   // var recommendationId;
   // var authorId;
 
-
-submitPost();
-
-// A function for handling what happens when the form to create a new post is submitted
-function handleFormSubmit(event) {
-  event.preventDefault();
-  // Constructing a newPost object to hand to the database
-  var newPost = {
-    movieTitle: movieTitleInput
-      .val()
-      .trim(),
-    recommendation: recInput
-      .val()
-      .trim(),
-    name: nameInput
-      .val()
-      .trim(),
-    rating: ratingInput
-      .val(),
-  };
+  // A function for handling what happens when the form to create a new post is submitted
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    // Constructing a newPost object to hand to the database
+    var newPost = {
+      movieTitle: movieTitleInput
+        .val()
+        .trim(),
+      recommendation: recInput
+        .val()
+        .trim(),
+      name: nameInput
+        .val()
+        .trim(),
+      rating: ratingInput
+        .val(),
+    };
+  }
 
   function submitPost(post) {
     $.post("/api/recommendations", post, function() {
@@ -42,7 +40,10 @@ function handleFormSubmit(event) {
     });
   };
 
-};
+  submitPost(newPost);
+}
+
+
 
   // $('#submit').on('click', function(event) {
   //   console.log('Hola submit button');
