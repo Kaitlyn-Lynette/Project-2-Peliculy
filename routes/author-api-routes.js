@@ -24,8 +24,8 @@ module.exports = function(app) {
     console.log(req);
     console.log('hit the server');
     var entryRec = req.body;
-    console.log("db right here",db);
-    console.log("db.Movie",db.Movie);
+    console.log('db right here',db);
+    console.log('db.Movie',db.Movie);
     console.log('entryRec', entryRec);
     db.Movie.create({
       // creates table in DB
