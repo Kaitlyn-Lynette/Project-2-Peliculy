@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
 
-  var Movie = sequelize.define('Movie', {
+  var Recommend = sequelize.define('Recommend', {
     movieTitle: DataTypes.STRING,
     recommendation: DataTypes.STRING,
     userName: DataTypes.STRING,
@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
     //   Create the associations to recommendations
     // }
 
-  return Movie;
+  return Recommend;
 };
 
 // // create model

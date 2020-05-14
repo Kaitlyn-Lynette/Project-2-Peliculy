@@ -1,8 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
   var Recommend = sequelize.define('Recommend', {
     movieTitle: DataTypes.STRING,
-    recommendation: DataTypes.STRING,
     userName: DataTypes.STRING,
+    recommendation: DataTypes.STRING,
+
     // rating
   });
   // Movie.associate = function(models) {
@@ -19,4 +20,4 @@ module.exports = function(sequelize, DataTypes) {
 // //   rating: Sequelize.INTEGER,
 // });
 // Movie.sync();
-// module.exports = Movie;
+// module.exports = Movie; 
