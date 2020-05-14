@@ -5,9 +5,9 @@ $(document).ready(function() {
   //Getting jQuery references from the recommend.html
   var bodyInput = $('#body');
   var titleInput = $('#title');
-  var recButton = $('#rec-button');
+  // var recButton = $('#rec-button');
   var yourName = $('#name');
-  var yourRating = $('#id');
+  // var yourRating = $('#id');
 
   $('#rec-button').click(function(){
 
@@ -39,14 +39,14 @@ $(document).ready(function() {
     //   .then(function(data) {
     //     // Log the data we found
     //     console.log(data);
-    //   });   
+    //   });
     function submitRecommendation(newPost) {
       $.post('/api/recommend',newPost)
         .then(function() {
           window.location.replace('/newsfeed');
         });
     }
-    console.log("I'm listening");
+    console.log('I\'m listening');
     submitRecommendation(newPost);
   });
 });

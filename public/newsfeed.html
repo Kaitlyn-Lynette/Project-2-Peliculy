@@ -26,17 +26,24 @@
      </div>
 
       <div class="container blog">
-        <!-- <div class="row">
-          <div class="col-md-2 col-sm-2">
-            <a class="btn btn-default" href="/recommend">New Recommendations</a>
-          </div>
-          <div class="col-md-2 col-sm-2">
-            <a class="btn btn-default" href="/authors">Manage Authors</a>
-          </div>
-        </div> -->
         <div class="row">
           <div class="col-md-12 newsfeed-container">
-            <p>Newsfeed</p>
+            <form method="POST" role="form">
+              <div class="form-group">
+                <label for="movie-title">Movie Title</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+
+              <div class="form-group">
+                <label for="recommendation">Recommendation</label>
+                <input type="text" class="form-control" id="role">
+              </div>
+
+              <div class="form-group">
+                <label for="username">User Name</label>
+                <input type="text" class="form-control" id="age">
+              </div>
+            </form>
           </div>
         </div>
       </div>
