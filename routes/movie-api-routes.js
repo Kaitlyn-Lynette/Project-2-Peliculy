@@ -20,18 +20,18 @@ module.exports = function(app) {
   // });
 
   // POST- Allows an author to create a recommendation
-  app.post('/api/new', function(req, res) {
+  app.post('/api/recommend', function(req, res) {
     console.log(req);
     console.log('hit the server');
     var entryRec = req.body;
     console.log('db right here',db);
-    console.log('db.Movie',db.Movie);
+    console.log('db.Movie',db.Recommend);
     console.log('entryRec', entryRec);
-    db.Movie.create({
+    db.Recommend.create({
       // creates table in DB
       movieTitle: entryRec.movieTitle,
+      recommendation: entryRec.recommendation,
       userName: entryRec.userName,
-      recommedation: entryRec.recommedation,
     }).then(function(result){
       console.log(result);
       res.json(result);

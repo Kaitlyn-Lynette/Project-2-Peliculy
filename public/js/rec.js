@@ -26,7 +26,7 @@ $(document).ready(function() {
       recommendation: bodyInput
         .val()
         .trim(),
-      name: yourName
+      userName: yourName
         .val()
         .trim(),
     };
@@ -41,7 +41,7 @@ $(document).ready(function() {
     //     console.log(data);
     //   });   
     function submitRecommendation(newPost) {
-      $.post('/api/recommendation',newPost)
+      $.post('/api/recommend',newPost)
         .then(function() {
           window.location.replace('/newsfeed');
         });
