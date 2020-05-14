@@ -1,6 +1,7 @@
 // Dependencies
 // =============================================================
 var path = require('path');
+var db = require('../models');
 
 // Routes
 // =============================================================
@@ -10,26 +11,28 @@ module.exports = function(app) {
 
   // index route loads  home page
   app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+    res.render('index');
   });
 
-  app.get('/movieview', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/movie-view.html'));
-  });
-
-  // authors route loads author-manager.html
+  // search route loads recommend.html
   app.get('/newsfeed', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/newsfeed.html'));
+    db.Recommend.findAll({})
+      .then(function(dbRecommend){
+        var dataVal = dbRecommend.map(function(recommendobj) {
+          return recommendobj.dataValues;
+        });
+        res.render('newsfeed',{recommends: dataVal});
+      });
   });
 
   // recommend route loads recommend.html
   app.get('/recommend', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/recommend.html'));
+    res.render('recommend');
   });
 
   // search route loads search.html
   app.get('/search', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/search.html'));
+    res.render('search');
   });
 
 };
