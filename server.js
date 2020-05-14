@@ -26,7 +26,7 @@ app.use(express.static('public'));
 // =============================================================
 require('./routes/movie-api-routes.js')(app);
 require('./routes/html-routes.js')(app);
-require('./routes/rec-routes.js')(app);
+// require('./routes/rec-routes.js')(app);
 // // Here we introduce HTML routing to serve different HTML files
 // // require("./app/routes/html-routes.js")(app);
 
