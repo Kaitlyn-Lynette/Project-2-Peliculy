@@ -7,17 +7,40 @@ module.exports = function(app) {
   // If a user sends data to add a new Rec entry...
 
 
-  //Allowing to look up all posts by users
-  // app.get('/api/authors', function(req, res) {
-  //   // Here we add an "include" property to our options in our findAll query
-  //   // We set the value to an array of the models we want to include in a left outer join
-  //   // In this case, just db.Post
-  //   db.Author.findAll({
-  //     include: [db.Recommendation]
-  //   }).then(function(dbAuthor) {
-  //     res.json(dbAuthor);
+  app.get('/api/recommend',function(req,res) {
+    db.Recommend.findAll({})
+      .then(function(dbRecommend){
+        // console.log('This is db recommend', dbRecommend);
+        res.json(dbRecommend);
+      });
+  });
+
+  //Get all reccomendations from a specific author
+  app.get('/api/author/:author', function(req, res) {
+    db.Recommend.findAll({
+      where: {
+        userName: req.params.author,
+      }
+    }).then(function(dbRecommend) {
+      console.log(dbRecommend);
+      res.json(dbRecommend);
+      console.log(author);
+    });
+  });
+
+  //    //Get all reccomendations from a specific author
+  //   app.get('/api/title/:title', function(req, res) {
+  //     db.Recommend.findAll({
+  //       where: {
+  //         movieTitle: req.params.title,
+  //       }
+  //     }).then(function(dbRecommend) {
+  //       console.log(dbRecommend);
+  //       res.json(dbRecommend);
+  //       console.log(author);
+  //     });
   //   });
-  // });
+  //   };
 
   // POST- Allows an author to create a recommendation
   app.post('/api/recommend', function(req, res) {
@@ -36,8 +59,6 @@ module.exports = function(app) {
       console.log(result);
       res.json(result);
       res.end();
-    }
-    );
+    });
   });
-
 };
