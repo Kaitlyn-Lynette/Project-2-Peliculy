@@ -4,14 +4,14 @@
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
-require('dotenv').config();
+
 var express = require('express');
 // var path = require("path");
 // Sets up the Express App
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 4044;
-
+require('dotenv').config();
 // Requiring our models for syncing
 var db = require('./models');
 
