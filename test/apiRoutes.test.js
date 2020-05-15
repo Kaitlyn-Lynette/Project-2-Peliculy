@@ -1,4 +1,4 @@
-// test html routes
+// Test Routes
 const axios = require('axios');
 describe('HTML Routes', () => {
   describe('GET /', () => {
