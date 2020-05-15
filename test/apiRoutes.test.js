@@ -1,22 +1,55 @@
+// test html routes
 const axios = require('axios');
-
-describe('API Routes', () => {
-  describe('GET /api/recommend', () => {
-    // - should have a 200 status code
-    it('should have a 200 status code', async () => {
-      // make a get request & capture the response
-      const { status } = await axios.get('/api/recommend');
-
-      // expect the response.status to be 200
+describe('HTML Routes', () => {
+  describe('GET /', () => {
+    it('should return a status code of 200', async () => {
+      const { status } = await axios.get('/');
       expect(status).toBe(200);
     });
-    // - it should have content type json
-    it('should have content type json', async () => {
-      const expectedContentType = 'application/json';
-      const { headers } = await axios.get('/api/recommend');
-
-      const hasJSON = JSON.stringify(headers).indexOf(expectedContentType) !== -1;
-
+    it('should have content type html', async () => {
+      const expectedContentType = 'text/html';
+      const { headers } = await axios.get('/');
+      const hasJSON =
+        JSON.stringify(headers).indexOf(expectedContentType) !== -1;
+      expect(hasJSON).toBe(true);
+    });
+  });
+  describe('GET /newsfeed', () => {
+    it('should return a status code of 200', async () => {
+      const { status } = await axios.get('/newsfeed');
+      expect(status).toBe(200);
+    });
+    it('should have content type html', async () => {
+      const expectedContentType = 'text/html';
+      const { headers } = await axios.get('/newsfeed');
+      const hasJSON =
+        JSON.stringify(headers).indexOf(expectedContentType) !== -1;
+      expect(hasJSON).toBe(true);
+    });
+  });
+  describe('GET /recommend', () => {
+    it('should return a status code of 200', async () => {
+      const { status } = await axios.get('/recommend');
+      expect(status).toBe(200);
+    });
+    it('should have content type html', async () => {
+      const expectedContentType = 'text/html';
+      const { headers } = await axios.get('/recommend');
+      const hasJSON =
+        JSON.stringify(headers).indexOf(expectedContentType) !== -1;
+      expect(hasJSON).toBe(true);
+    });
+  });
+  describe('GET /search', () => {
+    it('should return a status code of 200', async () => {
+      const { status } = await axios.get('/search');
+      expect(status).toBe(200);
+    });
+    it('should have content type html', async () => {
+      const expectedContentType = 'text/html';
+      const { headers } = await axios.get('/search');
+      const hasJSON =
+        JSON.stringify(headers).indexOf(expectedContentType) !== -1;
       expect(hasJSON).toBe(true);
     });
   });
