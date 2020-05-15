@@ -16,9 +16,12 @@ module.exports = function(app) {
 
   // POST- Allows an author to create a recommendation
   app.post('/api/recommend', function(req, res) {
-    // console.log(req);
-    // console.log('hit the server');
-    var entryRec = req.body;
+    console.log(req);
+    console.log('hit the server');
+    const entryRec = req.body;
+    console.log('This is req.body',entryRec);
+    // entryRec.routeName = entryRec.name.replace(/\s+/g, '+').toLowerCase();
+    // console.log('This is entryRec after replace',entryRec);
     // console.log('db right here',db);
     // console.log('db.Movie',db.Recommend);
     // console.log('entryRec', entryRec);
