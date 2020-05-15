@@ -8,11 +8,13 @@
     "start": "node server.js",
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
-    "watch": "nodemon server.js"
+    "watch": "nodemon server.js",
+    "jest": "jest --watchAll --verbose"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
@@ -26,6 +28,7 @@
     "sequelize-cli": "^5.5.1"
   },
   "devDependencies": {
-    "handlebars": "^4.5.0"
+    "handlebars": "^4.5.0",
+    "jest": "^26.0.1"
   }
 }

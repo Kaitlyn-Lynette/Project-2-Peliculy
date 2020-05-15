@@ -6,7 +6,6 @@
 // =============================================================
 var exphbs = require('express-handlebars');
 var express = require('express');
-// var path = require("path");
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -30,16 +29,8 @@ app.use(express.static('public'));
 // =============================================================
 require('./routes/movie-api-routes.js')(app);
 require('./routes/html-routes.js')(app);
-// require('./routes/rec-routes.js')(app);
-// // Here we introduce HTML routing to serve different HTML files
-// // require("./app/routes/html-routes.js")(app);
+require('./routes/rec-routes.js')(app);
 
-// app.get("/", function(req, res) {
-//     res.sendFile(path.join(__dirname, "./Public/index.html"));
-//   });
-
-// Syncing our sequelize models and then starting our Express app
-// =============================================================
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log('App listening on PORT ' + PORT);

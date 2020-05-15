@@ -2,6 +2,14 @@
     font-family: 'Fredericka the Great', cursive;
 }
 
+.newscard {
+    padding: 5px;
+    margin: 5px;
+    background: #EBECF0;
+}
+
+
+
 /* Width at 320px and below */
 @media screen and (max-width:320px) {
     #nav {

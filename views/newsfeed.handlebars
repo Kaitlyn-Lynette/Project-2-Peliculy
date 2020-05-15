@@ -3,11 +3,11 @@
         <div class="col-md-12 newsfeed-container">
             <ul>
                 {{#each recommends}}
-                <li>
+                <div class = "newscard">
                 <p><span class="label">Movie Title:</span> {{ movieTitle }}</p>
                 <p><span class="label">Recommendation:</span> {{ recommendation }}</p>
                 <p><span class="label">Username:</span> {{ userName }}</p>
-                </li>
+                </div>
                 {{/each}}
             </ul>
         </div>
