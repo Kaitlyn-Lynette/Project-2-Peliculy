@@ -5,6 +5,7 @@ $(document).ready(function(){
 
     // Save the book they typed into the book-search input
     var movieSearched = $('#movie-search').val().trim().replace(/\s+/g, '').toLowerCase();
+    console.log(movieSearched);
 
     // Make an AJAX get request to our api, including the user's book in the url
     $.get('/api/title/' + movieSearched, function(data) {

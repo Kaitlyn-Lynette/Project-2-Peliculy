@@ -6,6 +6,7 @@
 // =============================================================
 var exphbs = require('express-handlebars');
 var express = require('express');
+const cors = require('cors');
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -17,7 +18,7 @@ var db = require('./models');
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(cors());
 //Handlebars
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
@@ -27,7 +28,6 @@ app.use(express.static('public'));
 
 // Routes
 // =============================================================
-require('./routes/movie-api-routes.js')(app);
 require('./routes/html-routes.js')(app);
 require('./routes/rec-routes.js')(app);
 
